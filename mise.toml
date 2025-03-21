@@ -1,0 +1,11 @@
+[tools]
+node = "latest"
+
+[tasks.pnpm-install]
+description = 'Installs the packages'
+run = 'pnpm install'
+
+[tasks.build]
+description = 'Runs the build'
+run = 'pnpm run build'
+depends = 'pnpm-install'

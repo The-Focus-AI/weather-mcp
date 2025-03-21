@@ -1,0 +1,33 @@
+{
+  "name": "mcp",
+  "version": "1.0.0",
+  "main": "weather.js",
+  "type": "module",
+  "bin": {
+    "weather": "./build/weather.js"
+  },
+  "scripts": {
+    "build": "npm run build-weather",
+    "build-weather": "tsc && chmod 755 build/weather.js"
+  },
+  "files": [
+    "build"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.7.0",
+    "diff": "^7.0.0",
+    "minimatch": "^10.0.1",
+    "zod": "^3.24.2",
+    "zod-to-json-schema": "^3.24.3"
+  },
+  "devDependencies": {
+    "@types/diff": "^7.0.1",
+    "@types/minimatch": "^5.1.2",
+    "@types/node": "^22.13.10",
+    "typescript": "^5.8.2"
+  }
+}

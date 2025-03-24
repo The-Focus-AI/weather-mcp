@@ -1,33 +1,31 @@
 {
-  "name": "mcp",
+  "name": "weather-mcp",
   "version": "1.0.0",
-  "main": "weather.js",
   "type": "module",
   "bin": {
-    "weather": "./build/weather.js"
+    "weather-stdio": "./dist/mcp-stdio.js",
+    "weather-sse": "./dist/mcp-sse.js"
   },
   "scripts": {
-    "build": "npm run build-weather",
-    "build-weather": "tsc && chmod 755 build/weather.js"
+    "build": "tsc",
+    "start:stdio": "node dist/mcp-stdio.js",
+    "start:sse": "node dist/mcp-sse.js",
+    "dev:stdio": "tsx src/mcp-stdio.ts",
+    "dev:sse": "tsx src/mcp-sse.ts",
+    "inspect:stdio": "npx @modelcontextprotocol/inspector node dist/mcp-stdio.js",
+    "inspect:sse": "npx @modelcontextprotocol/inspector node dist/mcp-sse.js"
   },
-  "files": [
-    "build"
-  ],
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.7.0",
-    "diff": "^7.0.0",
-    "minimatch": "^10.0.1",
-    "zod": "^3.24.2",
-    "zod-to-json-schema": "^3.24.3"
+    "@types/cors": "^2.8.17",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@types/diff": "^7.0.1",
-    "@types/minimatch": "^5.1.2",
-    "@types/node": "^22.13.10",
-    "typescript": "^5.8.2"
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.0",
+    "tsx": "^4.7.1",
+    "typescript": "^5.3.3"
   }
 }
